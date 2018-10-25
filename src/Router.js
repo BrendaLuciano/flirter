@@ -5,7 +5,7 @@ import {
 } from 'react-native'
 
 import { Scene, Router } from 'react-native-router-flux';
-
+import SplashScreen from './containers/AuthContainer/SplashScreen'
 import Login from './containers/AuthContainer/Login'
 import Signup from './containers/AuthContainer/Signup'
 import Dashboard from './containers/MainContainer/Dashboard'
@@ -26,6 +26,9 @@ class RouterComponent extends Component {
             <Scene key='auth' initial hideNavBar>
               <Scene key='login'
                 component={Login}
+                />
+                <Scene key='splashScreen'
+                component={SplashScreen}
                 initial />
               <Scene
                 key='signup'
