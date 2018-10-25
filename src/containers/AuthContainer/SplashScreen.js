@@ -49,7 +49,7 @@ export default class SplashScreen extends Component<Props> {
     return (
       <View style={styles.container}>
       <ScrollView>
-        <TouchableOpacity onPress={()=> this.backToLogin()} style={styles.backButton} >
+         <TouchableOpacity onPress={()=> this.backToLogin()} style={styles.backButton} >
           <Text style={styles.buttonText}>Voltar para login</Text>
         </TouchableOpacity>
 
@@ -169,5 +169,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     textAlign: 'center',
     color: "#039BE5"
-  }
+  },
+  
 });
