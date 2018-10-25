@@ -7,9 +7,10 @@
  */
 
 import React, { Component } from 'react';
-import { Platform, StyleSheet, Text, View, Alert, Dimensions, TouchableOpacity, TextInput, ScrollView, ImageBackground } from 'react-native';
+import { Platform, StyleSheet, Text, View, Alert, Dimensions, TouchableOpacity, TextInput, ScrollView, ImageBackground, Image} from 'react-native';
 import { Actions } from 'react-native-router-flux';
 import firebase from "firebase"
+import imageLogo from '../../Images/logo-white.png';
 import imageBackground from '../../Images/splash-screen.png';
 
 var { height, width } = Dimensions.get('window');
@@ -50,15 +51,9 @@ export default class SplashScreen extends Component<Props> {
         return (
             <View style={styles.container}>
                 <ImageBackground style={styles.imageBackground} source={imageBackground}>
+                    <Image style={styles.imageLogo} source={imageLogo}/>
                     <ScrollView>
-                        <TouchableOpacity onPress={() => this.backToLogin()} style={styles.backButton} >
-                            <Text style={styles.buttonText}>Voltar para login</Text>
-                        </TouchableOpacity>
-
-                        <TouchableOpacity onPress={() => this.askRegister()} style={styles.registerButton} >
-                            <Text style={styles.buttonText}>Cadastrar</Text>
-                        </TouchableOpacity>
-                    </ScrollView>
+                     </ScrollView>
                 </ImageBackground>
             </View>
         );
@@ -177,7 +172,15 @@ const styles = StyleSheet.create({
     imageBackground: {
         width: "100%",
         height: "100%"
-    }
+    },
+    imageLogo: {
+        width: "55%",
+        height: "55%",
+        marginBottom: 50,
+        marginLeft: 75,
+        marginTop: 100,
+        marginRight: 20
+        }
 
 
 });
