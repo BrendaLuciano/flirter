@@ -7,7 +7,7 @@
  */
 
 import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View, Alert, Dimensions, TouchableOpacity, TextInput} from 'react-native';
+import {Platform, StyleSheet, Text, View, Alert, Dimensions, TouchableOpacity, TextInput, ScrollView} from 'react-native';
 import { Actions } from 'react-native-router-flux';
 import firebase from "firebase"
 
@@ -48,6 +48,7 @@ export default class SplashScreen extends Component<Props> {
   render() {
     return (
       <View style={styles.container}>
+      <ScrollView>
         <TouchableOpacity onPress={()=> this.backToLogin()} style={styles.backButton} >
           <Text style={styles.buttonText}>Voltar para login</Text>
         </TouchableOpacity>
@@ -94,6 +95,7 @@ export default class SplashScreen extends Component<Props> {
         <TouchableOpacity onPress={()=> this.askRegister()} style={styles.registerButton} >
           <Text style={styles.buttonText}>Cadastrar</Text>
         </TouchableOpacity>
+        </ScrollView>
       </View>
     );
   }
@@ -164,8 +166,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
+    alignItems: 'center'
   },
   welcome: {
     fontSize: 20,
@@ -196,12 +197,12 @@ const styles = StyleSheet.create({
     color: "white"
   },
   inputStyle:{
-    height: height * 0.06, 
+    height: height * 0.08, 
     width: width * 0.85, 
     borderBottomColor: 'gray', 
     borderBottomWidth: 1,
     margin: width * 0.04
-  },
+},
   titleText:{
     fontSize: 30,
     alignItems: 'center',
