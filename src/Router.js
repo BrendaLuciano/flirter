@@ -21,6 +21,10 @@ class RouterComponent extends Component {
   render () {
     return (
       <View style={styles.container}>
+      <StatusBar
+     backgroundColor="#0084ba"
+     barStyle="light-content"
+   />
         <Router>
           <Scene key='app'>
             <Scene key='auth' initial hideNavBar>

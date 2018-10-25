@@ -53,45 +53,6 @@ export default class SplashScreen extends Component<Props> {
           <Text style={styles.buttonText}>Voltar para login</Text>
         </TouchableOpacity>
 
-        <Text style={styles.titleText}>Cadastro de Usuário</Text>
-
-        <TextInput
-          style={styles.inputStyle}
-          onChangeText={(text) => this.setState({nome: text})}
-          placeholder="Ex: João Silva"
-          value={this.state.nome}
-        />
-        <TextInput
-          style={styles.inputStyle}
-          onChangeText={(text) => this.setState({email: text})}
-          placeholder="Ex: fulano@gmail.com"
-          value={this.state.email}
-        />
-        <TextInput
-          style={styles.inputStyle}
-          onChangeText={(text) => this.setState({senha: text})}
-          placeholder="Senha aqui"
-          secureTextEntry
-          value={this.state.senha}
-        />
-        <TextInput
-          style={styles.inputStyle}
-          onChangeText={(text) => this.setState({cidade: text})}
-          placeholder="Ex: Belo Horizonte"
-          value={this.state.cidade}
-        />
-        <TextInput
-          style={styles.inputStyle}
-          onChangeText={(text) => this.setState({telefone: text})}
-          placeholder="Ex: (31) 99999=9999"
-          value={this.state.telefone}
-        />
-        <TextInput
-          style={styles.inputStyle}
-          onChangeText={(text) => this.setState({idade: text})}
-          placeholder="Ex: 19 anos"
-          value={this.state.idade}
-        />
         <TouchableOpacity onPress={()=> this.askRegister()} style={styles.registerButton} >
           <Text style={styles.buttonText}>Cadastrar</Text>
         </TouchableOpacity>
