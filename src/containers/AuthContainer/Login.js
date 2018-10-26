@@ -7,20 +7,26 @@
  */
 
 import React, { Component } from 'react';
-import { Platform, StyleSheet, Text, View, TouchableOpacity, Alert, Image, Dimensions, ImageBackground } from 'react-native';
+import { Platform, StyleSheet, Text, View, TouchableOpacity, Alert, Image, Dimensions, ImageBackground, TextInput } from 'react-native';
 import { Actions } from 'react-native-router-flux';
 import imageBackground from '../../Images/background.png';
 
 var { height, width } = Dimensions.get('window');
 
 type Props = {};
-export default class Login extends Component<Props> {
+export default class SignUp extends Component<Props> {
 
   constructor(props) {
     super(props);
     this.state = {
       deviceWidth: width,
-      deviceHeight: height
+      deviceHeight: height,
+      nome: "",
+      email: "",
+      senha: "",
+      cidade: "Cidade aqui",
+      telefone: "Telefone aqui",
+      idade: "Idade aqui"
     };
   }
 
@@ -29,9 +35,19 @@ export default class Login extends Component<Props> {
       <View style={styles.container}>
         <ImageBackground style={styles.imageBackground} source={imageBackground}>
           <Image style={styles.logoStyle} source={require('../../Images/logo-white.png')} />
-          <TouchableOpacity onPress={() => this.openSignup()} style={styles.askButton} >
-            <Text style={styles.buttonText}>Cadastro</Text>
-          </TouchableOpacity>
+         
+        <TextInput
+          style={styles.inputStyle}
+          onChangeText={(text) => this.setState({email: text})}
+          placeholder="Email"
+          value={this.state.email}
+        />
+        <TextInput
+          style={styles.inputStyle}
+          onChangeText={(text) => this.setState({senha: text})}
+          placeholder="Senha"
+          value={this.state.senha}
+        />
         </ImageBackground>
       </View>
     );
@@ -135,6 +151,15 @@ const styles = StyleSheet.create({
   imageBackground: {
     width: "100%",
     height: "100%"
+  },
+  inputStyle:{
+    height: height * 0.08, 
+    width: width * 0.85, 
+    borderBottomColor: 'white', 
+    borderBottomWidth: 1,
+    margin: width * 0.04,
+    color: "white"
+  
   },
   estiloTexto: {
     color: '#ffffff',
