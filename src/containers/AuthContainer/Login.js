@@ -156,11 +156,12 @@ const styles = StyleSheet.create({
     height: "100%"
   },
   inputStyle:{
-    height: height * 0.08, 
-    width: width * 0.85, 
+    height: height * 0.07, 
+    width: width * 0.80, 
     borderBottomColor: 'white', 
     borderBottomWidth: 1,
-    margin: width * 0.04
+    margin: width * 0.02,
+    marginLeft: 30
   },
   botaoLogar: {
     color: 'white',
@@ -171,8 +172,9 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     borderColor: 'white',
     borderWidth: 2,
-    marginLeft: 40,
-    borderRadius: 30  
+    marginLeft: 50,
+    borderRadius: 30,
+    marginTop: 30  
   },
   estiloTexto: {
     color: '#ffffff',
