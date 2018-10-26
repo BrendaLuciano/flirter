@@ -28,8 +28,7 @@ export default class Login extends Component<Props> {
     return (
       <View style={styles.container}>
         <ImageBackground style={styles.imageBackground} source={imageBackground}>
-          <Image style={styles.logoStyle} source={require('../../Images/logo.png')} />
-          <Text style={styles.titleText}>Flirter</Text>
+          <Image style={styles.logoStyle} source={require('../../Images/logo-white.png')} />
           <TouchableOpacity onPress={() => this.openSignup()} style={styles.askButton} >
             <Text style={styles.buttonText}>Cadastro</Text>
           </TouchableOpacity>
@@ -114,8 +113,10 @@ const styles = StyleSheet.create({
     textAlign: 'center'
   },
   logoStyle: {
-    width: width * 0.55,
-    height: width * 0.55
+    width: width * 0.65,
+    height: width * 0.65,
+    marginLeft: 60,
+    marginTop: 30    
   },
   titleText: {
     fontSize: 30,
