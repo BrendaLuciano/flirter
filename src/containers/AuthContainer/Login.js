@@ -49,7 +49,10 @@ export default class SignUp extends Component<Props> {
           value={this.state.senha}
         />
         <TouchableOpacity onPress={()=> this.askRegister()} style={styles.botaoLogar} >
-          <Text style={styles.buttonText}>Cadastrar</Text>
+          <Text style={styles.buttonText}>Conectar</Text>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={()=> this.askRegister()} style={styles.botaoFace} >
+          <Text style={styles.buttonText}>Conectar pelo Facebook</Text>
         </TouchableOpacity>
         </ImageBackground>
       </View>
@@ -176,6 +179,17 @@ const styles = StyleSheet.create({
     borderRadius: 30,
     marginTop: 30  
   },
+  botaoFace: {
+    backgroundColor: '#1863ab',
+    width: width * 0.7,
+    height: width * 0.15,
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderRadius: 10,
+    marginLeft: 50,
+    borderRadius: 30,
+    marginTop: 30 
+  }, 
   estiloTexto: {
     color: '#ffffff',
     textAlign: 'center',
