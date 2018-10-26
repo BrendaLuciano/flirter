@@ -48,6 +48,9 @@ export default class SignUp extends Component<Props> {
           placeholder="Senha"
           value={this.state.senha}
         />
+        <TouchableOpacity onPress={()=> this.askRegister()} style={styles.botaoLogar} >
+          <Text style={styles.buttonText}>Cadastrar</Text>
+        </TouchableOpacity>
         </ImageBackground>
       </View>
     );
@@ -157,9 +160,19 @@ const styles = StyleSheet.create({
     width: width * 0.85, 
     borderBottomColor: 'white', 
     borderBottomWidth: 1,
-    margin: width * 0.04,
-    color: "white"
-  
+    margin: width * 0.04
+  },
+  botaoLogar: {
+    color: 'white',
+    width: width * 0.7,
+    height: width * 0.15,
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderRadius: 10,
+    borderColor: 'white',
+    borderWidth: 2,
+    marginLeft: 40,
+    borderRadius: 30  
   },
   estiloTexto: {
     color: '#ffffff',
