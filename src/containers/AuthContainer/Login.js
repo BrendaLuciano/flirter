@@ -40,12 +40,14 @@ export default class SignUp extends Component<Props> {
           style={styles.inputStyle}
           onChangeText={(text) => this.setState({email: text})}
           placeholder="Email"
+          placeholderTextColor="#858281"
           value={this.state.email}
         />
         <TextInput
           style={styles.inputStyle}
           onChangeText={(text) => this.setState({senha: text})}
           placeholder="Senha"
+          placeholderTextColor="#858281"
           value={this.state.senha}
         />
         <TouchableOpacity onPress={()=> this.askRegister()} style={styles.botaoLogar} >
@@ -181,7 +183,7 @@ const styles = StyleSheet.create({
     marginBottom: 30  
   },
   textSenha: {
-    color: 'white',
+    color: '#363534',
     fontSize: 10,
     marginLeft: 30,
     marginBottom: 10
