@@ -13,33 +13,34 @@ import BarDetails from './containers/MainContainer/PlaceDetails'
 import TestContainer from './containers/AuthContainer/TestContainer'
 
 class RouterComponent extends Component {
-  constructor (props) {
-    super (props);
+  constructor(props) {
+    super(props);
     this.state = {};
   }
 
-  render () {
+  render() {
     return (
       <View style={styles.container}>
-      <StatusBar
-     backgroundColor="#0084ba"
-     barStyle="light-content"
-   />
+        <StatusBar
+          backgroundColor="#0084ba"
+          barStyle="light-content"
+        />
         <Router>
-          <Scene key='app'>
             <Scene key='auth' initial hideNavBar>
               <Scene key='login'
                 component={Login}
-                />
-                <Scene key='splashScreen'
+                
+              />
+              <Scene key='splashScreen'
                 component={SplashScreen}
-                initial />
+                initial
+              />
               <Scene
                 key='signup'
                 component={Signup} />
               <Scene
-                  key='dashboard'
-                  component={Dashboard} />
+                key='dashboard'
+                component={Dashboard} />
               <Scene
                 key='barDetails'
                 component={BarDetails} />
@@ -47,7 +48,6 @@ class RouterComponent extends Component {
                 key='testContainer'
                 component={TestContainer} />
             </Scene>
-          </Scene>
         </Router>
       </View>
     )

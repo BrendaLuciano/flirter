@@ -6,11 +6,12 @@
  * @flow
  */
 
-import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View, TouchableOpacity, Alert, Image, Dimensions} from 'react-native';
+import React, { Component } from 'react';
+import { Platform, StyleSheet, Text, View, TouchableOpacity, Alert, Image, Dimensions, ImageBackground } from 'react-native';
 import { Actions } from 'react-native-router-flux';
+import imageBackground from '../../Images/background.png';
 
-var {height, width} = Dimensions.get('window');
+var { height, width } = Dimensions.get('window');
 
 type Props = {};
 export default class Login extends Component<Props> {
@@ -26,44 +27,47 @@ export default class Login extends Component<Props> {
   render() {
     return (
       <View style={styles.container}>
-        <Image style={styles.logoStyle} source={require('../../Images/logo.png')}/>
-        <Text style={styles.titleText}>Flirter</Text>
-        <TouchableOpacity onPress={()=> this.openSignup()} style={styles.askButton} >
-          <Text style={styles.buttonText}>Cadastro</Text>
-    </TouchableOpacity>
+        <ImageBackground style={styles.imageBackground} source={imageBackground}>
+          <Image style={styles.logoStyle} source={require('../../Images/logo.png')} />
+          <Text style={styles.titleText}>Flirter</Text>
+          <TouchableOpacity onPress={() => this.openSignup()} style={styles.askButton} >
+            <Text style={styles.buttonText}>Cadastro</Text>
+          </TouchableOpacity>
+        </ImageBackground>
       </View>
     );
   }
 
-  textoCondicional(condicao){
-    if (condicao == "maior de minas"){
+  textoCondicional(condicao) {
+    if (condicao == "maior de minas") {
       Alert.alert("Atenção", "Cruzeirão Cabuloso");
     }
     else {
       Alert.alert("Atenção", "Não tem bi");
     }
-    
+
   }
 
-  openAskAlert(){
+  openAskAlert() {
     Alert.alert(
       'Título do Alerta',
       'Você quer mesmo confirmar?',
       [
-        {text: 'Cancelar', onPress: () => console.log('Cancel Pressed'), style: 'cancel'},
-        {text: 'OK', onPress: () => 
-          this.openSimpleAlert()
+        { text: 'Cancelar', onPress: () => console.log('Cancel Pressed'), style: 'cancel' },
+        {
+          text: 'OK', onPress: () =>
+            this.openSimpleAlert()
         },
       ],
       { cancelable: false }
     )
   }
 
-  openSimpleAlert(){
+  openSimpleAlert() {
     Alert.alert("Olá", "Você confirmou");
   }
 
-  openSignup(){
+  openSignup() {
     Actions.signup();
   }
 }
@@ -75,7 +79,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: '#F5FCFF',
   },
-  mainButton:{
+  mainButton: {
     backgroundColor: "#4f8942",
   },
   textButton: {
@@ -100,7 +104,7 @@ const styles = StyleSheet.create({
     width: width * 0.8,
     alignItems: 'center'
   },
-  buttonText:{
+  buttonText: {
     color: "white"
   },
   welcomeText: {
@@ -113,13 +117,13 @@ const styles = StyleSheet.create({
     width: width * 0.55,
     height: width * 0.55
   },
-  titleText:{
+  titleText: {
     fontSize: 30,
     alignItems: 'center',
     textAlign: 'center',
     color: "#039BE5"
   },
-  meuBotao:{
+  meuBotao: {
     backgroundColor: 'green',
     width: width * 0.8,
     height: width * 0.1,
@@ -127,7 +131,11 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     borderRadius: 10
   },
-  estiloTexto:{
+  imageBackground: {
+    width: "100%",
+    height: "100%"
+  },
+  estiloTexto: {
     color: '#ffffff',
     textAlign: 'center',
     alignItems: 'center'
