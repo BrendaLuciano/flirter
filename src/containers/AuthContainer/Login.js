@@ -51,6 +51,9 @@ export default class SignUp extends Component<Props> {
         <TouchableOpacity onPress={()=> this.askRegister()} style={styles.botaoLogar} >
           <Text style={styles.buttonText}>Conectar</Text>
         </TouchableOpacity>
+
+        <Text style={styles.textSenha}>Esqueceu a senha?</Text>
+        
         <TouchableOpacity onPress={()=> this.askRegister()} style={styles.botaoFace} >
           <Text style={styles.buttonText}>Conectar pelo Facebook</Text>
         </TouchableOpacity>
@@ -135,16 +138,11 @@ const styles = StyleSheet.create({
     textAlign: 'center'
   },
   logoStyle: {
-    width: width * 0.65,
-    height: width * 0.65,
-    marginLeft: 60,
-    marginTop: 30    
-  },
-  titleText: {
-    fontSize: 30,
-    alignItems: 'center',
-    textAlign: 'center',
-    color: "#039BE5"
+    width: width * 0.60,
+    height: width * 0.60,
+    marginLeft: 70,
+    marginTop: 10,
+    marginBottom: 1    
   },
   meuBotao: {
     backgroundColor: 'green',
@@ -161,34 +159,43 @@ const styles = StyleSheet.create({
   inputStyle:{
     height: height * 0.07, 
     width: width * 0.80, 
+    marginTop: 1,  
     borderBottomColor: 'white', 
     borderBottomWidth: 1,
     margin: width * 0.02,
-    marginLeft: 30
+    marginLeft: 30,
+    marginBottom: 10
   },
   botaoLogar: {
     color: 'white',
-    width: width * 0.7,
+    width: width * 0.8,
     height: width * 0.15,
     alignItems: 'center',
     justifyContent: 'center',
     borderRadius: 10,
     borderColor: 'white',
     borderWidth: 2,
-    marginLeft: 50,
+    marginLeft: 30,
     borderRadius: 30,
-    marginTop: 30  
+    marginTop: 20,
+    marginBottom: 30  
+  },
+  textSenha: {
+    color: 'white',
+    fontSize: 10,
+    marginLeft: 30,
+    marginBottom: 10
   },
   botaoFace: {
     backgroundColor: '#1863ab',
-    width: width * 0.7,
+    width: width * 0.8,
     height: width * 0.15,
     alignItems: 'center',
     justifyContent: 'center',
     borderRadius: 10,
-    marginLeft: 50,
+    marginLeft: 30,
     borderRadius: 30,
-    marginTop: 30 
+    marginTop: 15 
   }, 
   estiloTexto: {
     color: '#ffffff',
