@@ -30,22 +30,6 @@ export default class SplashScreen extends Component {
         };
     }
 
-    componentDidMount() {
-        // AJUSTE TECNICO DO SETTIMEOUT PARA QUE O ROUTER-FLUX ESTEJA PRONTO AO CHAMAR A TELA DE LOGIN
-        const { currentUser } = firebase.auth();
-        if (currentUser) {
-            console.log("Estou logado: ", currentUser.uid);
-            setTimeout(() => {
-                Actions.login();
-            }, 0);
-        } else {
-            setTimeout(() => {
-                Actions.login();
-            }, 0);
-        }
-        //Buscar os dados do usuário logado no banco (depois de ter aprendido a fazer push no banco e criar auth)
-    }
-
     render() {
         return (
             <View style={styles.container}>
