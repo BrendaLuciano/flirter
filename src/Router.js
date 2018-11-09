@@ -5,11 +5,12 @@ import {
 } from 'react-native'
 
 import { Scene, Router } from 'react-native-router-flux';
+import Dashboard from './containers/MainContainer/Dashboard'
 import SplashScreen from './containers/AuthContainer/SplashScreen'
 import Login from './containers/AuthContainer/Login'
 import Signup from './containers/AuthContainer/Signup'
 import UserProfile from './containers/AuthContainer/UserProfile'
-import Dashboard from './containers/MainContainer/Dashboard'
+import CreatePlace from './containers/AuthContainer/CreatePlace'
 import BarDetails from './containers/MainContainer/PlaceDetails'
 import TestContainer from './containers/AuthContainer/TestContainer'
 
@@ -42,6 +43,9 @@ class RouterComponent extends Component {
                 key='userProfile'
                 component={UserProfile} />
               <Scene
+              key='createPlace'
+              component={CreatePlace} />
+            <Scene
                 key='dashboard'
                 component={Dashboard} />
               <Scene

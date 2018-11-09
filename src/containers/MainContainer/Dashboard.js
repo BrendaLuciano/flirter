@@ -7,7 +7,7 @@
  */
 
 import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View, Dimensions} from 'react-native';
+import {Platform, StyleSheet, Text, View, Dimensions,TouchableOpacity} from 'react-native';
 
 var {height, width} = Dimensions.get('window');
 
@@ -58,7 +58,6 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     color: '#333333',
     marginBottom: 5,
-    dfgdfgydifu: Brenda
   },
   botaoFace: {
     backgroundColor: '#1863ab',

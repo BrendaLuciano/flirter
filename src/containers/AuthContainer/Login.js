@@ -10,6 +10,7 @@ import React, { Component } from 'react';
 import { Platform, StyleSheet, Text, View, TouchableOpacity, Alert, Image, Dimensions, ImageBackground, TextInput } from 'react-native';
 import { Actions } from 'react-native-router-flux';
 import imageBackground from '../../Images/background.png';
+/** import openURL from ('http://google.com'); */
 
 var { height, width } = Dimensions.get('window');
 
@@ -50,18 +51,24 @@ export default class SignUp extends Component<Props> {
           placeholderTextColor="#858281"
           value={this.state.senha}
         />
-        <TouchableOpacity onPress={()=> this.askRegister()} style={styles.botaoLogar} >
+        <TouchableOpacity onPress={()=> this.openAskAlert()} style={styles.botaoLogar} >
           <Text style={styles.buttonText}>Conectar</Text>
-        </TouchableOpacity>
+        </TouchableOpacity>  
 
-        <Text style={styles.textSenha}>Esqueceu a senha?</Text>
-        
+        <TouchableOpacity onPress={()=> this.openDashboard()}>
+          <Text style={styles.textSenha}>Esqueceu a senha?</Text>
+        </TouchableOpacity>   
+
         <TouchableOpacity onPress={()=> this.askRegister()} style={styles.botaoFace} >
           <Text style={styles.buttonText}>Conectar pelo Facebook</Text>
         </TouchableOpacity>
         </ImageBackground>
       </View>
     );
+  }
+
+  openDashboard() {
+    return Actions.dashboard();
   }
 
   textoCondicional(condicao) {
@@ -183,10 +190,17 @@ const styles = StyleSheet.create({
     marginBottom: 30  
   },
   textSenha: {
-    color: '#363534',
+    color: '#fff',
     fontSize: 10,
     marginLeft: 30,
     marginBottom: 10
+  },
+  textCadastro: {
+    color: '#fff',
+    fontSize: 12,
+    margin: 30,
+    marginBottom: 10,
+    textAlign: "right"
   },
   botaoFace: {
     backgroundColor: '#1863ab',
