@@ -6,10 +6,11 @@
  * @flow
  */
 
-import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View, Dimensions,TouchableOpacity} from 'react-native';
+import React, { Component } from 'react';
+import { Platform, StyleSheet, Text, View, Dimensions, TouchableOpacity } from 'react-native';
+import { Actions } from 'react-native-router-flux';
 
-var {height, width} = Dimensions.get('window');
+var { height, width } = Dimensions.get('window');
 
 
 const instructions = Platform.select({
@@ -22,8 +23,8 @@ const instructions = Platform.select({
 type Props = {};
 export default class Dashboard extends Component<Props> {
 
-  goToUserProfile(){
-    
+  openUserProfile() {
+    return Actions.userProfile();
   }
 
 
@@ -33,10 +34,10 @@ export default class Dashboard extends Component<Props> {
         <Text style={styles.welcome}>Welcome to React Native! Dashboard</Text>
         <Text style={styles.instructions}>To get started, edit App.js</Text>
         <Text style={styles.instructions}>{instructions}</Text>
-        <TouchableOpacity onPress={()=> this.goToUserProfile()} style={styles.botaoFace} >
+        <TouchableOpacity onPress={() => this.openUserProfile()} style={styles.botaoFace} >
           <Text style={styles.buttonText}>Editar Perfil</Text>
         </TouchableOpacity>
-        
+
       </View>
     );
   }
@@ -68,6 +69,6 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     marginLeft: 30,
     borderRadius: 30,
-    marginTop: 15 
-  }, 
+    marginTop: 15
+  },
 });
